@@ -86,3 +86,59 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//console.log(finances[0][1])
+
+//the total months is simply the length of the array
+
+let totalMonths = finances.length;
+// finding the average is simply the Efx/Ef
+
+
+var counter = 0;
+let Efx = 0;
+
+/*for(even in finances){
+Efx += finances[even][1]; 
+}
+*/
+console.log(Efx);
+Efx = finances[0][1];
+for(var eve =1; eve < finances.length; eve++){
+Efx = finances[eve][1] - Efx; 
+}
+console.log(Efx);
+
+let currAm=0;
+Efx = finances[0][1];
+for(var eve =1; eve < finances.length; eve++){
+currAm=finances[eve][1]
+Efx = currAm - Efx; 
+}
+console.log(Efx);
+
+
+
+let prevAmt = finances[0][1];
+let sumChange = 0;
+
+for (let i = 1; i < finances.length; i++) {
+    let currAmt = finances[i][1];
+    var change = currAmt - prevAmt;
+    sumChange += change;
+    prevAmt = currAmt;  // Move this line inside the loop
+}
+console.log(prevAmt)
+console.log(sumChange)
+console.log(change)
+let avgChng = sumChange / (finances.length - 1);
+
+for (let i = 1; i < finances.length; i++) {
+    let currAmt = finances[i][1];
+    let change = currAmt - prevAmt;
+    sumChange += change;
+    prevAmt = currAmt;  // Move this line inside the loop
+}
+console.log(prevAmt)
+console.log(sumChange)
+avgChng = sumChange / (finances.length - 1);
