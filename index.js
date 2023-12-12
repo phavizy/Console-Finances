@@ -88,29 +88,39 @@ var finances = [
 ];
 
 
-
+// Assigning Variables
 
 var counter = 0;
 let prevAmt = finances[0][1];
 let sumoChange = 0;
-let greater=0;
+let TotalAmt =0;
 let changes = [];
 let bigger = 0;
 let lesser =0;
+let index = 0;
+let month = '';
+let month2 = '';
 
 
 for (let counter = 1; counter < finances.length; counter++) {
     let currAmt = finances[counter][1];
+    TotalAmt += currAmt
     var change = currAmt - prevAmt;
     sumoChange += change;
     changes.push(change)
 
     if (bigger<change){
       bigger = change
+      index = finances.findIndex(subarray => subarray.includes(currAmt))
+      month = finances[index][0]
+
+
     }
 
     if(lesser > change){
       lesser = change
+      index = finances.findIndex(subarray => subarray.includes(currAmt))
+      month2 = finances[index][0]
     }
 
     prevAmt = currAmt;
@@ -119,19 +129,15 @@ for (let counter = 1; counter < finances.length; counter++) {
 //the total months is simply the length of the array
 var monthTotal = finances.length;
 console.log("Total Months: " + monthTotal)
-console.log("Total : " + monthTotal)
+console.log("Total : $" + TotalAmt)
 
 // The average change is the sum of changes divided by the number of changes
 numberofChange = changes.length
 var avrChange = sumoChange/changes.length;
 
 console.log("Average change : " + avrChange.toFixed(2))
-
-console.log(bigger)
-console.log(lesser)
-
- //console.log(changes)
-//console.log(prevAmt)
-//console.log(sumoChange)
+let das = finances.findIndex(subarray => subarray.includes(bigger))
+console.log("Greatest Increase Profits/Losses : " + month+" ($"+bigger+")")
+console.log("Greatest Decrease Profits/Losses : " + month2+" ($"+lesser+")")
 
 
