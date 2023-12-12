@@ -87,58 +87,51 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-//console.log(finances[0][1])
 
-//the total months is simply the length of the array
-
-let totalMonths = finances.length;
-// finding the average is simply the Efx/Ef
 
 
 var counter = 0;
-let Efx = 0;
-
-/*for(even in finances){
-Efx += finances[even][1]; 
-}
-*/
-console.log(Efx);
-Efx = finances[0][1];
-for(var eve =1; eve < finances.length; eve++){
-Efx = finances[eve][1] - Efx; 
-}
-console.log(Efx);
-
-let currAm=0;
-Efx = finances[0][1];
-for(var eve =1; eve < finances.length; eve++){
-currAm=finances[eve][1]
-Efx = currAm - Efx; 
-}
-console.log(Efx);
-
-
-
 let prevAmt = finances[0][1];
-let sumChange = 0;
+let sumoChange = 0;
+let greater=0;
+let changes = [];
+let bigger = 0;
+let lesser =0;
 
-for (let i = 1; i < finances.length; i++) {
-    let currAmt = finances[i][1];
+
+for (let counter = 1; counter < finances.length; counter++) {
+    let currAmt = finances[counter][1];
     var change = currAmt - prevAmt;
-    sumChange += change;
-    prevAmt = currAmt;  // Move this line inside the loop
-}
-console.log(prevAmt)
-console.log(sumChange)
-console.log(change)
-let avgChng = sumChange / (finances.length - 1);
+    sumoChange += change;
+    changes.push(change)
 
-for (let i = 1; i < finances.length; i++) {
-    let currAmt = finances[i][1];
-    let change = currAmt - prevAmt;
-    sumChange += change;
-    prevAmt = currAmt;  // Move this line inside the loop
+    if (bigger<change){
+      bigger = change
+    }
+
+    if(lesser > change){
+      lesser = change
+    }
+
+    prevAmt = currAmt;
 }
-console.log(prevAmt)
-console.log(sumChange)
-avgChng = sumChange / (finances.length - 1);
+
+//the total months is simply the length of the array
+var monthTotal = finances.length;
+console.log("Total Months: " + monthTotal)
+console.log("Total : " + monthTotal)
+
+// The average change is the sum of changes divided by the number of changes
+numberofChange = changes.length
+var avrChange = sumoChange/changes.length;
+
+console.log("Average change : " + avrChange.toFixed(2))
+
+console.log(bigger)
+console.log(lesser)
+
+ //console.log(changes)
+//console.log(prevAmt)
+//console.log(sumoChange)
+
+

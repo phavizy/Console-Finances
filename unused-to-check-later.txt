@@ -1,0 +1,19 @@
+/*for(even in finances){
+Efx += finances[even][1]; 
+}
+*/
+/*console.log(Efx);
+Efx = finances[0][1];
+for(var eve =1; eve < finances.length; eve++){
+Efx = finances[eve][1] - Efx; 
+}
+console.log(Efx);
+
+let currAm=0;
+Efx = finances[0][1];
+for(var eve =1; eve < finances.length; eve++){
+currAm=finances[eve][1]
+Efx = currAm - Efx; 
+}
+console.log(Efx);
+*/
