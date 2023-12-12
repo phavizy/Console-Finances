@@ -119,6 +119,7 @@ for (let counter = 1; counter < finances.length; counter++) {
 
     if(lesser > change){
       lesser = change
+      
       index = finances.findIndex(subarray => subarray.includes(currAmt))
       month2 = finances[index][0]
     }

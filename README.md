@@ -5,3 +5,5 @@ This project checks the array and does analysis to get some info like
 * The Average Change
 * Greatest Increase in Profits or Losses
 * Greatest Decrease in Profits or Losses
+# Link to the Web App
+https://phavizy.github.io/Console-Finances/
