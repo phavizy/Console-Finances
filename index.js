@@ -108,7 +108,9 @@ for (let counter = 1; counter < finances.length; counter++) {
     var change = currAmt - prevAmt;
     sumoChange += change;
     changes.push(change)
+    prevAmt = currAmt;
 
+    //This checks if the updated change is higher than what is stored in the variable
     if (bigger<change){
       bigger = change
       index = finances.findIndex(subarray => subarray.includes(currAmt))
@@ -117,14 +119,14 @@ for (let counter = 1; counter < finances.length; counter++) {
 
     }
 
+    //This checks if the updated change is lower than what is stored in the variable
     if(lesser > change){
       lesser = change
-      
+
       index = finances.findIndex(subarray => subarray.includes(currAmt))
       month2 = finances[index][0]
     }
 
-    prevAmt = currAmt;
 }
 
 //the total months is simply the length of the array
